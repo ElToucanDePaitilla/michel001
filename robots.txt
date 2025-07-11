@@ -1,0 +1,10 @@
+# robots.txt pour https://michelhaury.com/
+
+User-agent: *
+Allow: /
+
+# Si vous souhaitez protéger certains dossiers, décommentez :
+# Disallow: /styles/
+# Disallow: /images/
+
+Sitemap: https://michelhaury.com/sitemap.xml

@@ -1,0 +1,140 @@
+/* a-propos.css */
+
+
+main {
+    padding-top: 50px;
+}
+
+/* ------------------------
+   Conteneur principal
+   ------------------------ */
+   .a-propos {
+    color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 80px 100px;     /* haut/bas 80px, gauche/droite 100px */
+    width: 90%;
+}
+
+/* Textes */
+.a-propos p {
+    text-align: justify;
+    margin: 0 100px 30px;   /* bas 30px, latéral 100px */
+    line-height: 50px;
+}
+
+/* Citations */
+.première-citation {
+    margin-top: 150px;
+}
+.citation {
+    text-align: left !important;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 24px;
+}
+.auteur {
+    font-size: 22px;
+    font-style: normal;
+}
+
+/* ------------------------
+   Clearfix pour le float
+   ------------------------ */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ------------------------
+   Desktop & tablettes (≥ 701px)
+   ------------------------ */
+/* Portrait 30% + texte enroulé */
+.portrait {
+    float: left;
+    width: 30%;                /* 30% du conteneur */
+    margin: 0 20px 30px 100px;  /* droite 20px, bas 30px, gauche 100px */
+    border-radius: 8px;
+}
+
+
+/* ------------------------
+   Laptop ????????????????????????????????????????
+   ------------------------ */  
+   
+   @media screen and (max-width: 900px) {
+    /* Alignement de la photo sous le même retrait gauche que le texte */
+    .portrait {
+        margin-left: 50px;    /* même marge que .a-propos p */
+        margin-right: 20px;   /* ou la valeur que vous préférez à droite */
+        margin-bottom: 30px;  /* conserve l’espacement sous la photo */
+        width: 50%;  
+    }
+
+    .a-propos p {
+        margin: 0 50px 30px;  /* texte à 50px des bords */
+    }
+
+
+    main .a-propos img {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+
+
+/* ------------------------
+   Tablettes + petits écrans (≤ 700px)
+   ------------------------ */  
+   
+   @media screen and (max-width: 700px) {
+    /* Alignement de la photo sous le même retrait gauche que le texte */
+    .portrait {
+        margin-left: 50px;    /* même marge que .a-propos p */
+        margin-right: 20px;   /* ou la valeur que vous préférez à droite */
+        margin-bottom: 30px;  /* conserve l’espacement sous la photo */
+        width: 40%;  
+    }
+
+    .a-propos p {
+        margin: 0 50px 30px;  /* texte à 50px des bords */
+        line-height: 40px;
+    }
+
+
+    main .a-propos img {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+/* ------------------------
+   Mobile (≤ 500px)
+   ------------------------ */
+@media screen and (max-width: 500px) {
+    main {
+        padding-top: 0px;
+    }
+    
+    /* Container full-bleed avec 20px de marge */
+    .a-propos {
+        margin: 20px;
+    }
+
+    /* Image full width du container */
+    .portrait {
+        float: none;            /* plus de float */
+        display: block;
+        width: 100%;            /* plein container */
+        margin: 10px 0 20px;       /* marge en bas */
+        border-radius: 8px;    /* coins arrondis */
+    }
+
+    /* Texte sans marge latérale */
+    .a-propos p {
+        margin: 0 6px 20px;    /* texte à 20px des bords */
+    }
+}

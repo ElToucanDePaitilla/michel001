@@ -1,0 +1,86 @@
+
+        /* Fullscreen background avec disparition après 3s */
+        .fullscreen-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('../images/intro/intro03.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 2000;
+        
+            /* Modifié ici ↓ */
+            animation: fadeOut 1s ease-in-out 4.8s forwards;
+        }
+
+        .fullscreen-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fond noir 80% superposé à l'image de bkgrnd*/
+        }
+
+        /* Texte centré avec animation */
+        .titre-intro {
+            text-align: center;
+            color: white;
+            font-family: "EB Garamond", serif;
+            letter-spacing: 18px;
+            font-size: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            border: 1px solid white;
+            padding: 0px 50px 20px 50px;
+
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out 0.3s forwards;
+        }
+
+        .titre-intro p {
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 8px;
+            font-size: 12px;
+            font-weight: lighter;
+
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 0.3s forwards;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+
+/* Désactive le splash dès que viewport ≤ 700px */
+@media screen and (max-width: 700px) {
+    .fullscreen-bg {
+      display: none !important;
+    }
+  }
+
+   
